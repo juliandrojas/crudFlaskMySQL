@@ -25,7 +25,7 @@ def Index():
 @app.route('/addClient')
 #Creamos una función para manejar la ruta
 def addClient():
-    return render_template('templates/registrarCliente.html')
+    return render_template('registrarCliente.html')
 #Ruta para listar clientes
 @app.route('/listClients')
 #Creamos una función para manejar la ruta
