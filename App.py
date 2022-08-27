@@ -28,21 +28,25 @@ def addClient():
     #Guardamos datos pero primero hacemos una comprobación
     if request.method == 'POST':
         #Guardamos cada dato en una variable
-        fullname = request.form['fullname']
-        phone = request.form['phone']
-        email = request.form['email']
+        documento = request.form['documento']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        fechaNacimiento = request.form['fechaNacimiento']
+        correo = request.form['correo']
+        numeroTelefono = request.form['numeroTelefono']
         #Usamos conexión a MySQL para insertar los datos en la BD
         #Usamos un cursor para saber donde está la conexión
         cur = mysql.connection.cursor()
         #Armamos la sentencia SQL, los valores los ponemos con %s y luego armamos una tupla para poner las variables
-        cur.execute('INSERT INTO contacts (fullname, phone, email) VALUES (%s, %s, %s)', (fullname, phone, email))
+        cur.execute('INSERT INTO clientes (documento, nombre, apellido, fechaNacimento, correo, numeroTelefono) VALUES (%s, %s, %s, %s, %s, %s)', (documento, nombre, apellido, fechaNacimiento, correo, numeroTelefono, numeroTelefono))
         #Ejecutamos la sentencia SQL
         mysql.connection.commit()
-        #Usamos flash para enviar mensajes
-        flash('Contact Added Successfully')
-        print("Fullname: ",fullname)
-        print("Phone: ",phone)
-        print("Email: ",email)
+        print("Documento: ", documento)
+        print("Nombre: ", nombre)
+        print("Apellido: ", apellido)
+        print("FechaNacimiento: ", fechaNacimiento)
+        print("Correo: ", correo)
+        print("NumeroTelefono: ", numeroTelefono)
         #return 'sent'
         #Usamos redirect y url_for para redireccionar
         return redirect(url_for('Index'))
