@@ -20,7 +20,7 @@ mysql = MySQL(app)
 #Creamos una función para manejar la ruta
 def Index():
     #Retornamos con render_template una vista llamada index.html, la cual es una plantilla HTML ubicada en la carpeta Vistas
-    return render_template('../View/index.html')
+    return render_template('index.html')
 #Ruta para añadir clientes
 @app.route('/addClient')
 #Creamos una función para manejar la ruta
