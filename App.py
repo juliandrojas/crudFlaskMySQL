@@ -25,7 +25,27 @@ def Index():
 @app.route('/addClient')
 #Creamos una función para manejar la ruta
 def addClient():
-    return render_template('registrarCliente.html')
+    #Guardamos datos pero primero hacemos una comprobación
+    if request.method == 'POST':
+        #Guardamos cada dato en una variable
+        fullname = request.form['fullname']
+        phone = request.form['phone']
+        email = request.form['email']
+        #Usamos conexión a MySQL para insertar los datos en la BD
+        #Usamos un cursor para saber donde está la conexión
+        cur = mysql.connection.cursor()
+        #Armamos la sentencia SQL, los valores los ponemos con %s y luego armamos una tupla para poner las variables
+        cur.execute('INSERT INTO contacts (fullname, phone, email) VALUES (%s, %s, %s)', (fullname, phone, email))
+        #Ejecutamos la sentencia SQL
+        mysql.connection.commit()
+        #Usamos flash para enviar mensajes
+        flash('Contact Added Successfully')
+        print("Fullname: ",fullname)
+        print("Phone: ",phone)
+        print("Email: ",email)
+        #return 'sent'
+        #Usamos redirect y url_for para redireccionar
+        return redirect(url_for('Index'))
 #Ruta para listar clientes
 @app.route('/listClients')
 #Creamos una función para manejar la ruta
