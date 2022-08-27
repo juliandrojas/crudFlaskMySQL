@@ -12,7 +12,7 @@ app.config['MYSQL_USER'] = 'root'
 #Contraseña del servidor MySQL
 app.config['MYSQL_PASSWORD'] = ''
 #Base de datos que tenemos en el servidor MySQL
-app.config['MYSQL_DB'] = 'clients'
+app.config['MYSQL_DB'] = 'tallertres'
 #Ejecutamos el módulo MySQL con las configuraciones 
 mysql = MySQL(app)
 #Cambiamos ruta para evitar que el servidor arroje un Error 404
