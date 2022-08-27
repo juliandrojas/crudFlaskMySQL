@@ -1,5 +1,7 @@
 #Llamamos al framework de Flask y las funciones render_template, request, redirect, url_for y fkas
 from flask import Flask, render_template, request, redirect, url_for, flash
+#Importamos el respectivo módulo de Flask para conectarnos a MySQL
+from flask_mysqldb import MySQL
 #Configuramos la conexión
 app = Flask(__name__)
 #Cambiamos ruta para evitar que el servidor arroje un Error 404
