@@ -11,58 +11,80 @@
         <title>Flask MySQL CRUD</title>
     </head>
     <body>
-        <div class="container">
-            <!-- Formulario y sección de vista de los registros -->
-            <div class="col-xl-6 col-md-6">
-                <form>
-                    <h1 class="text-center">Llena el siguiente formulario</h1>
+        <div class="container d-flex">
+            <div class="col-md-6">
+                <!-- Formulario y sección de vista de los registros -->
+                <h1 class="text-center">Formulario de registro de clientes</h1>
+                <form action="../controller/salvarCliente.php" method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="documento">Documento: </label>
+                        <input type="text" class="form-control" name="documento" aria-describedby="documentoHelp">
+                        <small id="documentoHelp" class="form-text text-muted">Espacio para el documento del cliente.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" class="form-control" name="nombre" aria-describedby="nombreHelp">
+                        <small id="nombreHelp" class="form-text text-muted">Espacio para el nombre del cliente.</small>
                     </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="form-group">
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" class="form-control" name="apellido" aria-describedby="apellidoHelp">
+                        <small id="apellidoHelp" class="form-text text-muted">Espacio para el apellido del cliente.</small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                        <input type="text" class="form-control" name="fechaNacimiento" aria-describedby="fechaNacimientoHelp">
+                        <small id="fechaNacimientoHelp" class="form-text text-muted">Espacio para la fecha de nacimiento del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroTelefono">Número de teléfono: </label>
+                        <input type="text" class="form-control" name="numeroTelefono" aria-describedby="numeroTelefonoHelp">
+                        <small id="numeroTelefonoHelp" class="form-text text-muted">Espacio para el numeroTelefono del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo: </label>
+                        <input type="text" class="form-control" name="correo" aria-describedby="correoHelp">
+                        <small id="correoHelp" class="form-text text-muted">Espacio para el correo del cliente.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="registrarCliente">Registrar</button>
                 </form>
             </div>
             <div class="col-md-6">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Formulario y sección de vista de los registros -->
+                <h1 class="text-center">Formulario de registro de clientes</h1>
+                <form action="../controller/salvarCliente.php" method="post">
+                    <div class="form-group">
+                        <label for="documento">Documento: </label>
+                        <input type="text" class="form-control" name="documento" aria-describedby="documentoHelp">
+                        <small id="documentoHelp" class="form-text text-muted">Espacio para el documento del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" class="form-control" name="nombre" aria-describedby="nombreHelp">
+                        <small id="nombreHelp" class="form-text text-muted">Espacio para el nombre del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" class="form-control" name="apellido" aria-describedby="apellidoHelp">
+                        <small id="apellidoHelp" class="form-text text-muted">Espacio para el apellido del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                        <input type="text" class="form-control" name="fechaNacimiento" aria-describedby="fechaNacimientoHelp">
+                        <small id="fechaNacimientoHelp" class="form-text text-muted">Espacio para la fecha de nacimiento del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroTelefono">Número de teléfono: </label>
+                        <input type="text" class="form-control" name="numeroTelefono" aria-describedby="numeroTelefonoHelp">
+                        <small id="numeroTelefonoHelp" class="form-text text-muted">Espacio para el numeroTelefono del cliente.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo: </label>
+                        <input type="text" class="form-control" name="correo" aria-describedby="correoHelp">
+                        <small id="correoHelp" class="form-text text-muted">Espacio para el correo del cliente.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="registrarCliente">Registrar</button>
+                </form>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
